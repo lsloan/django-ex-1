@@ -1,7 +1,8 @@
 FROM python:2.7
 MAINTAINER Chris Kretler "ckretler@umich.edu"
 
-RUN apt-get update -y
+RUN apt-get update -y && apt-get install -y \
+  ssh
 
 WORKDIR /app
 
