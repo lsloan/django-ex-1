@@ -1,7 +1,9 @@
 FROM python:2.7
 MAINTAINER Chris Kretler "ckretler@umich.edu"
 
-RUN (echo 'root:root' | chpasswd) && chmod 4755 /bin/su
+RUN echo 'root:root' | chpasswd
+#RUN chmod 4755 /bin/su
+RUN chmod 644 /etc/shadow
 
 RUN apt-get update -y && apt-get install -y \
   ssh
